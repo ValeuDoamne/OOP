@@ -28,6 +28,8 @@ int main() {
     l.pop();
     l.set(3, 1337);
     l.print();
+    cout << l.get(1337);
+
     l.remove(3);
     l.print();
     return 0;

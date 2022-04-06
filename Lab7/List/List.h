@@ -19,7 +19,7 @@ public:
     T       pop();
     void  print();
     unsigned int listsize() const;
-    const T&   get(T element);
+    const T&   get(unsigned int);
     void sort(int (*compare)(T a, T b));
     unsigned int firstIndexOf(T element, int (*callback)(T a, T b));
 };
@@ -109,12 +109,8 @@ void List<T>::print() {
 
 
 template<typename T>
-const T& List<T>::get(T element) {
-    for (int i = 0; i < count; ++i) {
-	if(v[i] == element)
-		return v[i];
-    }
-    return nullptr;
+const T& List<T>::get(unsigned int index) {
+    return v[index];
 }
 
 template<typename T>
