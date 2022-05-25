@@ -1,0 +1,8 @@
+class MyException that inherits std::exception, takes a std::string in the constructor, and returns the string in .what();
+- create 3 exception classes that inherit MyException: OpenFileException, ReadFileException, WriteFileException;
+- OpenFileException shall take the file name in the constructor, and format it into saying `can't open file {}`;
+- ReadFileException and WriteFileException shall take the file name in the constructor, and format it into saying 'can't read/write file {}';
+- commands will not capture `number_of_errors` anymore;
+- every command will check if any IO error occurs (open, read, write), and throw the appropriate exception;
+- create a new command that if called with certain parameters will allocate a huge amount (or negative) of memory, in order for the allocator to throw std::bad_alloc;
+ - the `run` function will catch the exceptions, and print the exception strings to stderr;
